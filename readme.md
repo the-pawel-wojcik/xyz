@@ -20,5 +20,5 @@ for molecule in molecules:
     for atom in molecule.data:
         print(f'{atom['atom']=}', end='')
         print(f'{atom['xyz']=}', end='')
-        print(f'{atom['extra']=}', end='')
+        print(f'{atom['extra']=}')
 ```
