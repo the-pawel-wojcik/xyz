@@ -11,14 +11,16 @@ pip install xyz_parser
 ```python
 import xyz_parser
 
-with open('molecules.xyz') as mols_file:
-    molecule = xyz_parser.parse(mols_file)
+with open('molecules.xyz') as molecules_file:
+    molecule = xyz_parser.parse(molecules_file)
 
 for molecule in molecules:
     print(f'{molecule.natoms=}')
     print(f'{molecule.comment=}')
-    for atom in molecule.data:
-        print(f'{atom['atom']=}', end='')
-        print(f'{atom['xyz']=}', end='')
-        print(f'{atom['extra']=}')
+    for atom in molecule.atoms:
+        print(f'{atom.symbol=}', end='')
+        print(f' {atom.x=}', end='')
+        print(f' {atom.y=}', end='')
+        print(f' {atom.z=}', end='')
+        print(f' {atom.extra=}')
 ```
