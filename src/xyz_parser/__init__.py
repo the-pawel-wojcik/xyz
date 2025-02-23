@@ -1,6 +1,7 @@
 """ xyz
 Parser of the .xyz file format. 
 """
+import os
 from dataclasses import dataclass
 from typing import Iterator
 
@@ -142,3 +143,10 @@ def parse(xyz_file: Iterator[str]) -> list[MoleculeXYZ]:
             break
         molecules += [parse_molecule(xyz_file, natoms_line)]
     return molecules
+
+
+def read_xyz_file(xyz_path: str) -> list[MoleculeXYZ]:
+    xyz_path = os.path.expanduser(xyz_path)
+    with open(xyz_path) as xyz_file:
+        xyz_structures = parse(xyz_file)
+    return xyz_structures
