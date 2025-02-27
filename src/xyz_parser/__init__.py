@@ -19,7 +19,7 @@ class AtomLineXYZ:
     extra: list[float]
 
     def __str__(self) -> str:
-        fmt = '-13.8f'
+        fmt = '-12.7f'
         str_xyz = f"{self.symbol:<3}"
         for coord in [self.x, self.y, self.z] + self.extra:
             str_xyz += f"{coord:{fmt}}"
@@ -42,9 +42,9 @@ class MoleculeXYZ:
         >>> print(water)
         3
         water
-        H     0.00000000  -1.00000000   0.00000000
-        O     0.00000000   0.00000000   1.00000000
-        H     0.00000000   1.00000000   0.00000000
+        H     0.0000000  -1.0000000   0.0000000
+        O     0.0000000   0.0000000   1.0000000
+        H     0.0000000   1.0000000   0.0000000
     """
     natoms: int
     comment: str

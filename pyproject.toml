@@ -1,6 +1,6 @@
 [project]
 name = "xyz_parser"
-version = "0.0.14"
+version = "0.0.15"
 description = "Parser of the xyz file format. Used in chemistry."
 readme = "readme.md"
 requires-python = ">=3.13"
